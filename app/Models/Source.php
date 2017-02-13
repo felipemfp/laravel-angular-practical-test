@@ -14,4 +14,9 @@ class Source extends Model
     protected $fillable = [
         'name', 'description', 'url', 'type', 'authority_id'
     ];
+
+    public function authority()
+    {
+      return $this->belongsTo('App\Model\Authority');
+    }
 }
