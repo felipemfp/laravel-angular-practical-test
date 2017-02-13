@@ -19,26 +19,26 @@ class Dataset extends Model
 
     public function sourceManager()
     {
-      return $this->belongsTo('App\Model\Source', 'source_manager_id');
+      return $this->belongsTo('App\Models\Source', 'source_manager_id');
     }
 
     public function sourceProvider()
     {
-      return $this->belongsTo('App\Model\Source', 'source_provider_id');
+      return $this->belongsTo('App\Models\Source', 'source_provider_id');
     }
 
     public function group()
     {
-      return $this->belongsTo('App\Model\Group');
+      return $this->belongsTo('App\Models\Group');
     }
 
     public function authority()
     {
-      return $this->belongsTo('App\Model\Authority');
+      return $this->belongsTo('App\Models\Authority');
     }
 
     public function values()
     {
-      return $this->hasMany('App\Model\Value');
+      return $this->hasMany('App\Models\Value');
     }
 }

@@ -17,6 +17,7 @@ class CreateDatasetsTable extends Migration
             $table->integer('id');
 
             $table->string('name');
+            $table->string('long_name');
             $table->string('description');
             $table->string('url');
 

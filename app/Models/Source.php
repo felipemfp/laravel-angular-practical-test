@@ -17,6 +17,6 @@ class Source extends Model
 
     public function authority()
     {
-      return $this->belongsTo('App\Model\Authority');
+      return $this->belongsTo('App\Models\Authority');
     }
 }

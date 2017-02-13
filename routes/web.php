@@ -15,4 +15,6 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/update', 'HomeController@update');
+Route::post('/upload', 'HomeController@upload');
+
+Route::get('/visualization/{id}', 'VisualizationController@index');
