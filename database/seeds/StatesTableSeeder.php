@@ -49,41 +49,47 @@ class StatesTableSeeder extends Seeder
         for ($id=11; $id <= 17; $id++, $j++) {
             State::create([
               'id' => $id,
-              'description' => $states[$j]
+              'description' => $states[$j],
+              'region' => State::NORTE
             ]);
         }
 
         for ($id=21; $id <= 29; $id++, $j++) {
             State::create([
               'id' => $id,
-              'description' => $states[$j]
+              'description' => $states[$j],
+              'region' => State::NORDESTE
             ]);
         }
 
         for ($id=31; $id <= 33; $id++, $j++) {
             State::create([
               'id' => $id,
-              'description' => $states[$j]
+              'description' => $states[$j],
+              'region' => State::SUDESTE
             ]);
         }
 
         State::create([
           'id' => 35,
-          'description' => $states[$j]
+          'description' => $states[$j],
+          'region' => State::SUDESTE
         ]);
         $j++;
 
         for ($id=41; $id <= 43; $id++, $j++) {
             State::create([
               'id' => $id,
-              'description' => $states[$j]
+              'description' => $states[$j],
+              'region' => State::SUL
             ]);
         }
 
         for ($id=50; $id <= 53; $id++, $j++) {
             State::create([
               'id' => $id,
-              'description' => $states[$j]
+              'description' => $states[$j],
+              'region' => State::CENTRO_OESTE
             ]);
         }
     }

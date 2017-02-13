@@ -15,7 +15,10 @@ class CreateStatesTable extends Migration
     {
         Schema::create('states', function (Blueprint $table) {
             $table->integer('id');
+
             $table->string('description');
+            $table->enum('region', ['Norte', 'Nordeste', 'Sudeste', 'Centro-Oeste', 'Sul']);
+
             $table->timestamps();
         });
     }
