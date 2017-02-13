@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', ['datasets' => Dataset::paginate(7)]);
+        return view('index');
     }
 
     /**
@@ -41,9 +41,9 @@ class HomeController extends Controller
     {
         if ($request->hasFile('dataset'))
         {
-          $dataset = $request->file('dataset');
+          $dataset_file = $request->file('dataset');
 
-          $xml = simplexml_load_file($dataset);
+          $xml = simplexml_load_file($dataset_file);
 
           $dataset = Dataset::firstOrNew(['id' => $xml->id]);
 
@@ -116,13 +116,7 @@ class HomeController extends Controller
             $value->dataset_id = $dataset->id;
             $value->save();
           }
-
-          return redirect()->action('VisualizationController@index', ['id' => $dataset->id]);
         }
-        else
-        {
-          return redirect()->action('HomeController@index');
-        }
-
+        return redirect()->action('HomeController@index');
     }
 }

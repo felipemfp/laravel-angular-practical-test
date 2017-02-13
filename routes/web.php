@@ -17,4 +17,14 @@ Route::get('/', 'HomeController@index');
 
 Route::post('/upload', 'HomeController@upload');
 
-Route::get('/visualization/{id}', 'VisualizationController@index');
+
+Route::group(['prefix' => 'api'], function()
+{
+    Route::resource('datasets', 'DatasetController', ['only' => [
+        'index', 'show'
+    ]]);
+
+    Route::resource('states', 'StateController', ['only' => [
+        'index', 'show'
+    ]]);
+});
