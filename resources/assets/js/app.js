@@ -12,7 +12,7 @@ app.run(function($http) {
     $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 
-app.controller('datasetController', ['$http', function($http) {
+app.controller('datasetController', ['$http, $log', function($http, $log) {
   var vm = this;
 
   vm.yearFilter = '2012';
@@ -59,7 +59,7 @@ app.controller('datasetController', ['$http', function($http) {
           return obj;
         }, {});
       }, function(err) {
-        // pass
+        $log.error('XHR Failed for get datasets.\n' + angular.toJson(err.data, true));
       }).then(function() {
         vm.loading--;
         setTimeout(function() {
@@ -79,7 +79,7 @@ app.controller('datasetController', ['$http', function($http) {
           return obj;
         }, {});
       }, function(err) {
-        // pass
+        $log.error('XHR Failed for get states.\n' + angular.toJson(err.data, true));
       }).then(function() {
         vm.loading--;
         setTimeout(function() {

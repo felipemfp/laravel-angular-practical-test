@@ -47,7 +47,7 @@ cd path/to/laravel-practical-test
 Migrate the database:
 
 ```
-php artisan migrate
+php artisan migrate --seed
 ```
 
 And compile frontend stuff:
@@ -64,7 +64,6 @@ Go to [homestead.app](http://homestead.app) or whatever you put in your `hosts` 
 
 * [Laravel](https://laravel.com/) - The backend framework
 * [AngularJS](https://angularjs.org/) - The frontend framework
-* [Axios](https://github.com/mzabriskie/axios) - The JavaScript HTTP client
 * [Bootstrap](http://getbootstrap.com/) - The CSS framework
 
 ## License

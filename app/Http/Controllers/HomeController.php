@@ -33,8 +33,9 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Parse the dataset that has been uploaded and redirect to index.
      *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function upload(Request $request)

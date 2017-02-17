@@ -15,6 +15,12 @@ class Source extends Model
         'name', 'description', 'url', 'type', 'authority_id'
     ];
 
+
+    /**
+     * Get the authority for the source.
+     *
+     * @return App\Models\Authority
+     */
     public function authority()
     {
       return $this->belongsTo('App\Models\Authority');
