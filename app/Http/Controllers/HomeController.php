@@ -9,6 +9,7 @@ use App\Models\Source;
 use App\Models\State;
 use App\Models\Value;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -46,9 +47,9 @@ class HomeController extends Controller
 
           $xml = simplexml_load_file($dataset_file);
 
-          $dataset = Dataset::firstOrNew(['id' => $xml->id]);
+          $dataset = Dataset::firstOrNew(['id' => (int)$xml->id]);
 
-          $dataset->id = $xml->id;
+          $dataset->id = (int)$xml->id;
           $dataset->url = $xml->url;
           $dataset->name = $xml->nome;
           $dataset->long_name = $xml->nome_estendido;
@@ -106,7 +107,6 @@ class HomeController extends Controller
           $dataset->source_provider_id = $source_provider->id;
 
           $dataset->values()->delete();
-
           $dataset->save();
 
           foreach ($xml->valores[0]->entry as $entry) {
@@ -114,7 +114,7 @@ class HomeController extends Controller
             $value->data = $entry->valor;
             $value->state_id = $entry->estado_ibge;
             $value->year = $entry->ano;
-            $value->dataset_id = $dataset->id;
+            $value->dataset_id = (int)$xml->id;
             $value->save();
           }
         }
