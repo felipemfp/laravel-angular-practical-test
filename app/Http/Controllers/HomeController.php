@@ -9,7 +9,6 @@ use App\Models\Source;
 use App\Models\State;
 use App\Models\Value;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {

@@ -8,7 +8,6 @@
   },
   "devDependencies": {
     "angular": "^1.6.2",
-    "axios": "^0.15.3",
     "bootstrap-sass": "^3.3.7",
     "chart.js": "^2.5.0",
     "jquery": "^3.1.0",
