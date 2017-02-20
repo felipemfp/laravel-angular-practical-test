@@ -12,7 +12,7 @@ app.run(function($http) {
     $http.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 });
 
-app.controller('datasetController', ['$http, $log', function($http, $log) {
+var datasetController = app.controller('datasetController', function($http, $log) {
   var vm = this;
 
   vm.yearFilter = '2012';
@@ -141,4 +141,6 @@ app.controller('datasetController', ['$http, $log', function($http, $log) {
   }
 
   initialize();
-}])
+});
+
+datasetController.$inject = ['$http', '$log'];
