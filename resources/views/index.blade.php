@@ -2,7 +2,7 @@
 
 @section('content')
 @verbatim
-<div class="container" ng-cloak ng-app="womenAndScience" ng-controller="datasetController as vm">
+<div class="container" ng-cloak ng-app="womenAndScience" ng-controller="DatasetController as vm">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">

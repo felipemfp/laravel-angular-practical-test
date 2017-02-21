@@ -40,7 +40,7 @@
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize",
             "npm install --only=dev",
-            "npm run dev"
+            "npm run production"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
